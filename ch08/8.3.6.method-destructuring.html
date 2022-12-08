@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x = [1, 2, 3, 4];
+        let O = { x: 2, y: 4 };
+        let [, , p, q] = x;
+        let { y } = O;
+        console.log(p + " : " + q)
+        console.log(y)
+
+        /*         function vectorAdd(v1, v2) {
+                    return [v1[0] + v2[0], v1[1] + v2[1]];
+                }
+                vectorAdd([1, 2], [3, 4]) // => [4,6] */
+        function vectorAdd([x1, y1], [x2, y2]) {
+            // Unpack 2 arguments into 4 parameters
+            return [x1 + x2, y1 + y2];
+        }
+        vectorAdd([1, 2, 4, 5], [3, 4]) // => [4,6]
+
+        function vectorMultiply({ x, y }, scalar) {
+            return { x: x * scalar, y: y * scalar };
+        }
+        console.log(vectorMultiply({ x: 1, y: 2 }, 4)) // => {x: 2, y: 4}
+
+
+        //
+        function sum(a) {
+            let total = 0;
+            for (let element of a) { // Throws TypeError if a is not iterable
+                if (typeof element !== "number") {
+                    throw new TypeError("sum(): elements must be numbers");
+                }
+                total += element;
+            }
+            return total;
+        }
+        // console.log(sum(5,6,7))
+        console.log(sum([5,6,"7"]))
+    </script>
+</body>
+
+</html>

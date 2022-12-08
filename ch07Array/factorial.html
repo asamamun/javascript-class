@@ -1,0 +1,8 @@
+<script>
+    var n = prompt();
+    var numbers = [];
+        for (let i = 1; i <= n; i++) {            
+            numbers.push(i);
+        }
+        document.write(numbers.reduce((x,y)=>x*y,1))
+</script>

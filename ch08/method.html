@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //x is a function
+        function x(){ return "calling x";}
+        let math = {
+            "a":5,
+            "b":6,
+            //add is a method
+            "add":function(){ return this.a + this.b;}//this means current onject
+        }
+        console.log(x())// calling like function
+        console.log(window.x())// calling like method
+        console.log(math.add());//add is called method of object math
+    </script>
+</body>
+</html>

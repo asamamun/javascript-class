@@ -1,0 +1,37 @@
+.card{
+    overflow: hidden;
+    min-height: 450px;
+}
+.card img{
+    height: 130px;
+    transition: .5s;
+}
+.card img:hover{
+    transform: scale(1.1);
+}
+.price span{
+    font-size: 14px;
+    font-weight: 18px;
+}
+.price span:nth-child(3){
+    text-decoration: line-through;
+}
+.card-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: "----";
+}
+.card-footer{
+    background-color: #fff !important;
+    border-top: none;
+}
+.footer a{
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

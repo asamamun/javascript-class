@@ -1,0 +1,21 @@
+<script>
+function x(a,b){
+        console.log(x.length)
+        // number of parameters it declares in its parameter list
+        console.log(arguments.length) 
+        // number of arguments passed when calling the function
+        }
+/* x(1,2,3,4,6,7,8)
+x(1) */
+    let o = {
+/*         x: function(a,b){
+            console.log(x.length)// number of parameters it declares in its parameter list
+            console.log(arguments.length) // number of arguments passed when calling the function
+        } */
+    }
+    // x(3,4,5,6)
+    // o.x(3,4,5,6)
+    x.call(o,5,6,7)//x is the property which has fx and o is the object
+    x.apply(o,[5,6,7])//x is the property which has fx and o is the object
+
+</script>

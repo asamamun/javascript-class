@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>array is compound/object data type</h1>
+    <p>array has only one property: length</p>
+    <p>array has many methods: push, pop, shift,unshift, sort, join, reverse, slice, splice</p>
+    <p>powerfull array iteration: foreach, map, filter, reduce</p>
+    <script>
+        var a = new Array();//array
+        var aa = []; //array
+        aa[0] = 5;
+        aa[1] = 6;
+        aa[2] = 7;
+        console.log(aa.length)
+
+        //PUSH : insert values at the end into array
+        aa.push(77);
+        aa.push(79);
+        console.log(aa);
+        //UNSHIFT : unshift values at the beginning of the array
+        aa.unshift("hi");
+        aa.unshift(" IDB ");
+        console.log(aa);
+        //POP: remove values at the end of the array
+        console.log(aa.pop());
+        aa.pop();
+        console.log(aa);
+        //SHIFT : removes values from the beginning of the array
+        aa.shift();
+        console.log(aa);
+        
+
+        
+
+    </script>
+</body>
+</html>

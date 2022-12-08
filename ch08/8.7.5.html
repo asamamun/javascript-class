@@ -1,0 +1,15 @@
+<script>
+    function f(y) { return this.x + y; } // This function needs to be bound
+    let o = { x: 1 }; // An object we'll bind to
+
+    let g = f.bind(o); // Calling g(x) invokes f() on o
+    console.log(f(5))
+    console.log(g)
+    console.log(g(2)) // => 3
+    let p = { x: 10, g }; // Invoke g() as a method of this object
+    g = f.bind(p)
+    console.log(g(2))
+
+    console.log(f.toString())
+    console.log(f)
+</script>

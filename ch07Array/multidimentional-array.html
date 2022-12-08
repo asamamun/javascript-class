@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HW: show the series in table</h1>
+    <script>
+/*         var dharapath = [
+            [1,2,3,4,5,6,7,8,9,10],
+            [2,4,6,8,10,12,14,16,18,20],            
+        ]; */
+        var serial = prompt("serial",10);
+        var limit = prompt("limit",8);
+        var d = [];
+        for (let i = 0; i < serial; i++) {
+            d[i] = new Array(limit)
+            for (let j = 0; j < limit; j++) {                
+                document.write(i + " x" + j + " =  " + i*j + " , ");
+                d[i][j]=i*j;
+            }
+            document.write("<br>");            
+        }
+        console.log(d);
+
+    </script>
+</body>
+</html>

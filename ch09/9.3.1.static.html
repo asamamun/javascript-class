@@ -1,0 +1,27 @@
+<script>
+    class x{
+        p=0;//public field can be accessed from object
+        // # means private field/property
+        #tax = 0.05;//private property cannot  be accessed from object
+        q = 1;//public field
+        static MYPI = Math.PI;
+        hi(){return "hi from hi fx";}
+        //static method can be called directly without creating object of that class
+        static sq(x){ return x*x;}
+        total(x){ return x + x* this.#tax}
+    }
+    let o = new x;//object is an instance of a class
+console.log(o.hi())
+// console.log(x.hi())//error
+console.log(x.sq(5))
+console.log(Math.min(5,6,7,1))
+console.log(x.p)//undefined bcs p is not static. you cannot call it without creating a object of x
+console.log(o.p)//
+console.log("1200 total with tax is : " + o.total(1200))//
+
+
+console.log("value of r: "  + o.r)//
+
+console.log(x.MYPI)
+
+</script>

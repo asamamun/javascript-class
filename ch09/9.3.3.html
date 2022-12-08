@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        create a class called myNumber with constructor.it will take 2 values in constructor
+create 4 methods:
+add
+sub
+mul
+div
+
+let n = new myNumner(3,4)
+n.add() //7
+n.sub() //-1
+n.mul() //12
+n.div() //3/4
+    </pre>
+    <script>
+
+
+        class myNumber {
+            constructor(p, q) {
+                this.x = p;
+                this.y = q;
+                this.name = "parent";
+            }
+            add(){ return this.x + this.y; }
+            sub(){ return this.x - this.y; }
+            mul(){ return this.x * this.y; }
+            div(){ return this.x / this.y; }
+        }
+        //subclass or child class
+        class someMath extends myNumber{
+            constructor(pp,qq){
+                //calling parent constructor
+                super(pp,qq);
+                // this.x = pp;
+                // this.y = qq;
+                //child constructors task
+                this.name = "child";
+            }
+            max(){ return Math.max(this.x, this.y); }
+            min(){ return Math.min(this.x, this.y); }
+        }
+
+        let o = new myNumber(77, 7);
+        console.log(o.add());
+        console.log(o.div());
+        console.log(o.x);
+
+        let sm = new someMath(5,7);
+        console.log(sm.add())
+        console.log(sm.max())
+        console.log(sm.min()) 
+        console.log(sm.name)
+
+
+        /*         class myNumner{
+                    constructor(p,q){
+                        this.add = p+q;
+                        this.sub = p-q;
+                        this.mul = p*q;
+                        this.div = p/q;
+                    }
+                } */
+
+    </script>
+</body>
+
+</html>

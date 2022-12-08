@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>string to number conversion: Number(), parseInt(), parseFloat()</h3>
+    <h3>number/boolean to string conversion: toString()</h3>
+    <h3>any type to boolean conversion: Boolean()</h3>
+    <script>
+        var x = 5;
+        var y = "6";
+        var z = x + Number(y);
+        var firstname = "sohandler";
+        console.log(z);
+        var p = x.toString();
+        console.log(typeof x);
+        console.log(typeof p);
+        console.log(x === p);
+        console.log(Boolean(name))
+        var mathpi = Math.PI;
+        var mathpi = "675876.57878546";
+        console.log(Number(mathpi).toFixed(2))
+        console.log(Number(mathpi).toExponential())
+        console.log(Number(mathpi).toExponential(3))
+        console.log(Number(mathpi).toPrecision())
+        console.log(Number(mathpi).toPrecision(2))
+        console.log(Number(mathpi).toPrecision(25))
+        const obj = { a: 1, b: 2 };
+const { a, b } = obj;
+console.log(a + " " + b)
+    </script>
+</body>
+
+</html>

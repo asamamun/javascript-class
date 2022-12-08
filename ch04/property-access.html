@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fan = {
+            blade:3,
+            type:"wall fan",
+            price: 3000,
+            manu : "Walton"
+        }
+        var ac;
+        console.log(ac?.rpm)
+        console.log(fan.type)
+        let a = { b: null };
+        console.log(a.b?.c.d) // => undefined
+    </script>
+</body>
+</html>

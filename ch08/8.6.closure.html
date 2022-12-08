@@ -1,0 +1,28 @@
+<script>
+    /*     let scope = "global scope"; // A global variable
+        function checkscope() {
+            let scope = "local scope"; // A local variable
+            function f() { return scope; } // Return the value in scope here
+            return f();
+        }
+        console.log(checkscope())
+        // console.log(scope) */
+    /*     let scope = "global scope"; // A global variable
+        function checkscope() {
+            let scope = "local scope"; // A local variable
+            function f() { return scope; } // Return the value in scope here
+            return f;
+        }
+        console.log(checkscope()())
+        scope = "class scope";
+        console.log(checkscope()()) */
+    // let s = checkscope()();
+    let uniqueInteger = (function () { // Define and invoke
+        let counter = 0; // Private state of function below
+        return function () { return counter++; };
+    }());
+    //let uniqueInteger2 = function () { return countr++; }
+    console.log(uniqueInteger())
+    console.log(uniqueInteger())
+    console.log(uniqueInteger())
+</script>

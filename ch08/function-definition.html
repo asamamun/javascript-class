@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>lorem</p>
+    <script>
+        // 8.1.1 Function Declarations
+        //fx1
+        function sq(n) { return n * n; }
+
+        //fx3
+        function printprops(o) {
+            for (let p in o) {
+                console.log(`${p}: ${o[p]}\n`);
+            }
+        }
+        //fx: factorial
+        function factorial(x) {
+            if (x <= 1) return 1;
+            return x * factorial(x - 1);
+        }
+        //fx call/invoke
+        console.log(sq(5))
+        
+        // console.log(printprops({a:"test",b:"test2",c:"test3"}))
+        console.log(printprops(screen))
+        console.log("____________");
+        console.log(printprops(window.document))
+        document.fgColor = "green"
+        document.bgColor = "gray"
+        console.log(factorial(6))
+        console.log(factorial(5))
+        // 8.1.2 Function Expressions
+        //fx2
+        let sq2 = function (n) { return n * n; }
+        console.log(sq2(5))
+        const square = function(x) { return x*x; };
+        //recursive fx
+        const f = function fact(x) { if (x <= 1) return 1; else return x*fact(x-1); };
+        console.log("Fact : " + f(5))
+
+        //number sort
+        console.log([37,222,1].sort(function(a,b) { return a-b; }));
+        console.log([37,222,1].sort(function(a,b) { return b-a; }));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum2(x,y){
+            return x+y;
+        }
+        let sum1 = function (x,y){
+            return x+y;
+        }
+        //arrow fx: compact version
+        const sum = (x, y) => { return x + y; };
+        //constant fx
+        const constantFunc = () => 42;
+        function hi(){ return "hello";}
+        function allsum(...n){
+            let total = 0;
+            n.forEach(x=>total+=x);
+            return total;
+        }
+        console.log(allsum(22,33))
+
+    </script>
+</body>
+</html>

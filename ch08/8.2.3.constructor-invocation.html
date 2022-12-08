@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //A constructor invocation creates a new, empty object that inherits from the object specified by the prototype property of the constructor.
+        let a = []
+        let aa = new Array();
+        
+        let o = {}
+        let oo = new Object();
+        let d = new Date()
+        console.log(d.getFullYear() + "-"+  d.getMonth() + "-"+d.getDate());
+
+        function x(n=0){ 
+            console.log(arguments.length)
+            return "you have given " + n;
+        }// here n is function variable and also parameter
+        let p = 5;
+        console.log(x(p,3,567))// here p is argument
+        console.log(x(9,3))// here p is argument
+        console.log(x())// here p is argument
+        function total(itemtotal = 0,tax  = 0.05){
+           // itemtotal = itemtotal || 0;//if itemtotal undefined itemtotal is 0
+            //tax = tax || 0.05;
+            return itemtotal + itemtotal*tax;
+        }
+        /* function total(itemtotal,tax  = 0.05){
+            itemtotal = itemtotal || 0;//if itemtotal undefined itemtotal is 0
+            return itemtotal + itemtotal*tax;
+        } */
+        console.log(total(1200));
+        console.log(total(22200,0.15));
+        console.log(total());
+    </script>
+</body>
+</html>

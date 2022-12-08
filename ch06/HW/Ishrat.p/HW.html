@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    
+    <!-- Navbar area start  -->
+    <nav class="navbar navbar-expand-lg bg-danger mb-5">
+      <div class="container">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                More Options
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Add to cart</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success  mx-3" type="submit">Search</button>
+            <button class="btn btn-light  mx-3" type="submit">Login</button>
+            <button class="btn btn-light" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar area end -->
+
+    <!-- products card start  -->
+    <div class="container">
+      <h1>Products</h1>
+      <hr>
+      <div class="row g-3" id="productContainer"></div>
+    </div>
+     <!-- products card end  -->
+
+     <!-- footer area start  -->
+     <footer class="bg-danger py-5 mt-3">
+      <p class="text-center text-light">We use cookies to give you the best experience possible. By continuing, we'll assume you're cool with our cookie policy.</p>
+       <!-- <div>
+        <a href="#">Home</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+        <a href="#">Services</a>
+       </div> -->
+     </footer>
+     <!-- footer area end -->
+    <script>
+      function showproducts(d) {
+        let products = d;
+        let mainproducts = products.products;
+
+        console.log(mainproducts);
+
+        mainproducts.forEach((e) => {
+          document.getElementById(
+            "productContainer"
+          ).innerHTML += `
+          <div class="col-md-3">
+            <div class="card">
+              <img src="${e.thumbnail}" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${e.title}</h5>
+                <p class="card-text">${e.description}</p>
+                <p class="price">
+                  <span class="text-success">Offer Price: ${Math.round(e.price - (e.price * e.discountPercentage / 100))}</span>  
+                  <br>
+                  <span class="text-danger">Price: ${e.price}</span>  
+                  <br>
+                  <span>Category: ${e.category}</span>
+                  <br>
+                  <span>Brand: ${e.brand}</span>
+                </P>
+              </div
+              <div class="card-footer">
+                  <a href="#" class="btn btn-outline-danger">Buy Now</a>
+              </div>
+            </div>
+          </div>`;
+        });
+      }
+      // let products = null;
+      fetch("https://dummyjson.com/products")
+        .then((res) => res.json())
+        .then((data) => {
+          showproducts(data);
+        });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+logical evidence:
+
+user 3 number: find the biggest number
+add 1 to 100
+converter
+factorial 3! 1*2*3*4*5*6*7*8
+prime
+

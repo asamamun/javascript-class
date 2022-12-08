@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var hi = function () { return "hello world"; }//fx definition
+        console.log(hi())//fx invocation
+        alert(5);//fx call/invocation
+
+        /*         function square(x, log) { // The second argument is an optional function
+                    if (log) { // If the optional function is passed
+                        log(x); // Invoke it
+                    }
+                    return x * x; // Return the square of the argument
+                } */
+
+        function square(x, log) { // The second argument is an optional function
+            log?.(x); // Call the function if there is one
+            return x * x; // Return the square of the argument
+        }
+        function a() { alert(5) }
+        function a() { alert(6) }
+        function a() { alert(7) }
+        function a() { alert(8) }
+        a()
+        alert(square(5))
+
+        let f = null, x = 0;
+        try {
+            f?.(x++); // Throws TypeError because f is null
+        } catch (e) {
+            console.log(x) // => 1: x gets incremented before the exception is thrown
+            console.log(e.message)
+        }
+    </script>
+</body>
+
+</html>

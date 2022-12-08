@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <a href="https://www.w3schools.com/html/html_emojis.asp">https://www.w3schools.com/html/html_emojis.asp</a>
+    <a href="https://www.w3schools.com/charsets/ref_emoji.asp">https://www.w3schools.com/charsets/ref_emoji.asp</a>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <button onclick="emoji('A')">A</button>
+    <button onclick="emoji('B')">B</button>
+    <button onclick="emoji('C')">C</button>
+    <button onclick="emoji('128512')">&#128512;</button>
+    <button onclick="emoji('128525')">&#128525;</button>
+    <button onclick="emoji('128151')">&#128151;</button>
+    <button onclick="emoji('128510')">&#128510;</button>
+    <button onclick="emoji('129409')">&#129409;</button>
+            </div>
+            <div class="col-6">
+                <div id="content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        function emoji(v){
+            if(isNaN(v)){
+                document.getElementById('content').innerHTML += v;
+            }
+            else{
+                document.getElementById('content').innerHTML += '&#' + v + ";";
+            }            
+        }
+    </script>
+</body>
+</html>

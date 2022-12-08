@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        "use strict";
+        let $html = ""
+        let s = "Bangladesh";
+        for (let index = 0; index < s.length; index++) {            
+            $html += ` ${s[index]} <br> `; 
+            alert( index +" : "+ $html)           
+        }
+        document.getElementById("result").innerHTML = $html;
+    </script>
+</body>
+</html>

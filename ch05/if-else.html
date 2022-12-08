@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="flag" width="200px" src="https://countryflagsapi.com/png/br" alt="">
+    <script>
+        let name = prompt("enter your team name");
+/*         if (name.toLowerCase() == "argentina") {
+            document.getElementById("flag").src = "assets/images/argentina.webp";
+        }
+        else if (name.toLowerCase() == "brasil" || name.toLowerCase() == "bestteam") {
+            document.getElementById("flag").src = "assets/images/brasil.webp";
+        }
+        else {
+            document.getElementById("flag").src = "assets/images/not-found.webp";
+        } */
+        switch (name.toLowerCase()) {
+            case "argentina":
+            document.getElementById("flag").src = "assets/images/argentina.webp";
+                break;
+            case "brasil":
+            document.getElementById("flag").src = "assets/images/brasil.webp";
+                break;        
+            case "germany":
+            document.getElementById("flag").src = "assets/images/brasil.webp";
+                break;        
+            case "spain":
+            document.getElementById("flag").src = "assets/images/brasil.webp";
+                break;        
+            case "portugal":
+            document.getElementById("flag").src = "assets/images/brasil.webp";
+                break;        
+            default:
+            document.getElementById("flag").src = "assets/images/not-found.webp";
+                break;
+        }
+    </script>
+</body>
+
+</html>

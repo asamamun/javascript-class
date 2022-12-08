@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //merge objects
+        var points = {x:1,y:2}
+        var morepoints = {z:3,p:22,y:3}
+        var totalpoints = Object.assign({},points,morepoints,{t:6});
+        var totalpoints2 = {...points,...morepoints};
+        console.log(points)
+        console.log(morepoints)
+        console.log(totalpoints)
+        console.log({points,morepoints})
+        console.log({...points,...morepoints})
+        // document.write(totalpoints);
+        for (const key in totalpoints) {            
+                document.write( key + " : "+totalpoints[key] + "<br>");         
+            
+        }
+        document.write(JSON.stringify(totalpoints))//returns stringify object
+        console.log(JSON.stringify(totalpoints))//returns stringify object
+        console.log(totalpoints)//returns stringify object
+        
+    </script>
+</body>
+</html>

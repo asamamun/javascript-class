@@ -1,0 +1,18 @@
+<script>
+
+    function Student() {
+        return {
+        name: "anon",
+        roll: "not set yet",
+        show: function(){ return this.name + ", "+ this.roll}
+    }
+    }
+    //you can create function instance as object
+    //prototype object
+    //in js, objects are created from its prototypes
+    let st1 = new Student();
+    console.log(st1.show())
+    console.log(st1.roll)
+/*     let r = new Range(1,5);
+    console.log(r.toString()); */
+</script>

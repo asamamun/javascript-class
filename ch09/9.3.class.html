@@ -1,0 +1,32 @@
+<script>
+    class OurNumbers{
+        constructor(num){ console.log("you dont have to call me!!I will be called automatically when you create a new object from me.You can also pass values when creating objects from me. I will get the values. n = " + num );
+        this.n = num;
+    }
+        factorial(){
+            let t = 1;
+            for (let i = 2; i <= this.n; i++) {
+                t *= i;                
+            }
+            return t;
+        }
+        isPrime(){            
+            for(let i = 2, s = Math.sqrt(this.n); i <= s; i++)
+            if(this.n % i === 0) {return false;} 
+            return this.n > 1;
+                }
+/*         isPrime(){
+            if(this.n == 1){ return false;}
+            for(let i = 2, s = Math.sqrt(this.n); i <= s; i++)
+            if(this.n % i === 0) {return false;} 
+            // return this.n > 1;
+            return true;
+                } */
+    }
+    let n = new OurNumbers(5);
+    let m = new OurNumbers(27);
+    console.log(n.factorial())
+    console.log(n.isPrime())
+    console.log(m.factorial())
+    console.log(m.isPrime())
+</script>

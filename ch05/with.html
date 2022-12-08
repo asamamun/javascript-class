@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="formvalues">
+
+    </p>
+    <form action="" name="log">
+        <input type="text" name="email" id="uemail">
+        <input type="text" name="pass" id="upass">
+        <span value="abc">asdfdaf</span>
+        <input type="button" value="login" onclick="login()">
+    </form>
+    <form action="" name="reg">
+        <input type="text" name="email">
+        <input type="text" name="pass">
+        <input type="button" value="register">
+    </form>
+    <script>
+        // a = Math.PI * r * r;
+        // x = r * Math.cos(Math.PI);
+        // y = r * Math.sin(Math.PI / 2);
+/*         with (Math) {
+                    a = PI * r * r;
+                    x = r * cos(PI);
+                    y = r * sin(PI / 2);
+                } */
+
+                function login(){
+                    // console.log(document.log.email.value)
+                    // console.log(document.log.pass.value)
+                    console.log(document.forms[0].email.value)
+                    console.log(document.forms[0].elements[2].value)
+                    console.log(document.forms[1].elements[1].value)
+                    console.log(document.getElementById("uemail").value)
+                    console.log(document.getElementById("upass").value)
+                    document.getElementById("formvalues").innerHTML = `
+                    <strong>Your form values</strong> <br>
+                    User Name : ${document.getElementById("uemail").value} <br>
+                    Password : ${document.getElementById("upass").value} <br>
+                    `;
+                }
+    </script>
+</body>
+
+</html>

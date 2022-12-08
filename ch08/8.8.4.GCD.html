@@ -1,0 +1,13 @@
+<script>
+    function gcd(a, b) { // Type checking for a and b has been omitted
+        if (a < b) { // Ensure that a >= b when we start
+            [a, b] = [b, a]; // Destructuring assignment to swap variables
+        }
+        while (b !== 0) { // This is Euclid's algorithm for GCD
+            [a, b] = [b, a % b];//destructuring
+        }
+        return a;
+    }
+    console.log(gcd(12,9));
+    console.log(gcd(125,50));
+</script>

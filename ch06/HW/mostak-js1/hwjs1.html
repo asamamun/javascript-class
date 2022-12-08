@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hwjs1</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+
+<style>
+    .card{
+        height: 600px;
+        box-shadow: 5px 5px 5px black;
+        transition: .5s;
+    }
+    .card:hover{
+        padding: 10px;
+        color: red;
+        
+    }
+    .card img{
+        height: 300px;
+        object-fit: cover;
+    }
+    .card-text{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: "......";
+    }
+    .card .card-title{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: "......";
+    }
+
+</style>
+
+
+</head>
+
+<body class="" style="background-image: linear-gradient(to bottom, rgb(36, 62, 98),yellow,skyblue,rgba(130, 246, 13, 0.616)) ;">
+
+    <div>
+        <div class="container-xxl text-white" style="background-color: rgb(36, 62, 98);">
+            <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(36, 62, 98);">
+
+                <a class="navbar-brand ms-2" href="#">
+                    <img class="" src="assets/mostaklogogreen.png" alt="Mostak Ahmed" width="200px" height="60px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mmb-lg-0 text-white">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page" href="mostak.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">About</a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="blog.html">Blog</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success text-white me-2" type="submit">Search</button>
+                            <!-- <input class="form-control me-2" type="" placeholder="Search" aria-label="Search"> -->
+                            <button class="btn btn-outline-success text-white" type="download">Download</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="me-2">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        LogIn
+                    </button>
+
+
+                </div>
+                <div class="me-2">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        Registration
+                    </button>
+
+                    <!-- Modal -->
+
+                </div>
+            </nav>
+
+        </div>
+    </div>
+    <div class="container-xxl text-white text-align-justify" style="margin-top:100px ;
+    text-align: justify;">
+    <h3>About Ours:</h3>
+        Online shopping is a form of electronic commerce which allows consumers to directly buy goods or services from a seller over the Internet using a web browser or a mobile app. Consumers find a product of interest by visiting the website of the retailer directly or by searching among alternative vendors using a shopping search engine, which displays the same product's availability and pricing at different e-retailers. As of 2020, customers can shop online using a range of different computers and devices, including desktop computers, laptops, tablet computers and smartphones.
+
+An online shop evokes the physical analogy of buying products or services at a regular "bricks-and-mortar" retailer or shopping center; the process is called business-to-consumer (B2C) online shopping. When an online store is set up to enable businesses to buy from another businesses, the process is called business-to-business (B2B) online shopping. A typical online store enables the customer to browse the firm's range of products and services, view photos or images of the products, along with information about the product specifications, features and prices.
+
+Online stores usually enable shoppers to use "search" features to find specific models, brands or items. Online customers must have access to the Internet and a valid method of payment in order to complete a transaction, such as a credit card, an Interac-enabled debit card, or a service such as PayPal. For physical products (e.g., paperback books or clothes), the e-tailer ships the products to the customer; for digital products, such as digital audio files of songs or software, the e-tailer usually sends the file to the customer over the Internet. The largest of these online retailing corporations are Alibaba, Amazon.com, and eBay
+
+<br><br>
+<h2>Our Products:</h2>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="https://dummyjson.com/docs/products" target="_blank">https://dummyjson.com/docs/products</a>
+    <div class="container-xl mt-5">
+        <div class="row g-3" id="productContainer">
+
+        </div>
+
+    </div>
+    <!-- add bootstrap -->
+    <!-- add live server in vs code -->
+    <!-- click go live in vs code -->
+    <script>
+        function showproducts(d) {
+            let products = d;
+            let mainproducts = products.products
+            console.log(mainproducts)
+            mainproducts.forEach(e => {
+                document.getElementById('productContainer').innerHTML += `<div class="col-md-4" >
+                <div class="card">
+  <img src="${e.thumbnail}" class="card-img-top" style="height: 250px; " alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${e.title}</h5>  
+    <p class="card-text">${e.description}</p>
+    <div class="">
+    <h5 class=" me-3 ">Price: ${e.price}$</h5>
+    <h5 class=" ">Discount Percentage: ${e.discountPercentage}$</h5>
+</div>
+    <h5 class="card-title">Rating: ${e.rating}</h5>
+    <h5 class="card-title">Stock: ${e.stock}</h5>
+    <h5 class="card-title">Brand: ${e.brand}</h5>
+    <h5 class="card-title">Category: ${e.category}</h5>
+    
+    <div class="card-footer mx-auto my-auto"> <a href="#" class="btn btn-outline-primary mx-auto">Buy Now</a></div>
+
+  </div>
+
+</div> </div>`
+            });
+        }
+        // let products = null;
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(data => { showproducts(data) });
+
+
+    </script>
+
+
+
+
+
+    <footer class="container-fluid text-center text-lg-start  text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+               
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Web Design & Development
+                        </h6>
+                        </h6>
+                        <p>
+                            Web design and development is an umbrella term that describes the process of creating a
+                            website. Like the name suggests, it involves two major skill sets: web design and web
+                            development. Web design determines the look and feel of a website, while web development
+                            determines how it functions.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Bootstrap</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">JavaScript</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> Shenpara Parbata,Mirpur-10, Dhaka-1216 </p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            mostakidb@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> +8801752243665 </p>
+                        <p><i class="fas fa-print me-3"></i> + 01000000000 </p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(19, 9, 9, 0.05);">
+            © 2022 Copyright:
+            <a class="text-reset fw-bold" href="">Mostak Ahmed </a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+
+
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

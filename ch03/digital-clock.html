@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+    #display{
+        font-family: 'Space Mono', monospace;
+        text-align: center;
+        font-size: 3em;
+    }
+</style>
+</head>
+<body>
+    <h1 id="display"></h1>
+    <!-- <button onclick="gettime()">time now</button> -->
+    <script>
+        function addzero(n){
+            if(n<10){ return "00"+n}
+            else if(n<100){ return "0"+n}
+            else return n;
+        }
+        function sz(n){
+            if(n<10){ return "0"+n}
+            else return n;
+        }
+        var gettime = function(){
+        var d = new Date();
+        document.getElementById("display").innerHTML = d.getFullYear() 
+        + "-" + sz(d.getMonth()+1) 
+        + "-" + sz(d.getDate())
+        + " " + sz(d.getHours())
+        + ":" + sz(d.getMinutes()) 
+        + ":" + sz(d.getSeconds())
+        + " " + addzero(d.getMilliseconds());
+        }
+        setInterval(gettime,1);
+    </script>
+</body>
+</html>

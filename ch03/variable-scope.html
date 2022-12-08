@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const x = 1; // Declare x as a global constant
+        if (x === 1) {
+            let x = 3; // Inside a block x can refer to a different value
+            console.log(x); // Prints 2
+        }
+        console.log(x); // Prints 1: we're back in the global scope now
+        // let x = 3; // ERROR! Syntax error trying to re-declare
+        var p=5;
+        var p=6;
+    </script>
+</body>
+
+</html>

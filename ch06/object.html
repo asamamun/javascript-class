@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Built in object: console, document,Math, Window, Screen,location </h3>
+    <script>
+        console.log(screen.width)
+        console.log(screen.height)
+        console.log(window.location)
+        // console.log(window.print())
+    </script>
+    <h3>User defined object</h3>
+    <script>
+/*         var person = new Object();
+        person.name = "A";
+        person.bg = "B+";
+        person.run = function(n){
+            return "running " + n + " kms";
+        } */
+/*         var person = {
+            name: "A",
+            bg: "B+",
+            run:function(n){ return "running " + n + " kms"; },
+        }; */
+        var person = {};
+        var x = Math;
+        console.log(x.PI)
+        person.name = "A";
+        person.bg = "B+";
+        person.run = function(n){
+            return "running " + n + " kms";
+        }
+        console.log(person.name + " is " + person.run(5))
+    </script>
+</body>
+</html>

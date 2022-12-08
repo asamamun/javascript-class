@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="display">
+    <button onclick="calc()">Calculate</button>
+    <h1 id="result" style="text-align: center; color: green;"></h1>
+    <script>
+        var a = 6;
+        console.log(eval("99+a*4+3/4"))
+        let calc = function(){
+            let formula = document.getElementById('display').value;
+            document.getElementById("result").innerHTML = eval(formula);
+        }
+    </script>
+</body>
+</html>

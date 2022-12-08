@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>try catch</h1>
+    <p id="error"></p>
+    <script>
+        let x = function(n){ 
+            if(typeof n != "number") {throw new Error("value must be number");}
+            return n*n
+        }
+        /* console.log(x(5))
+        console.log(x(6))
+        console.log(x(16))
+        console.log(x("6"))
+        console.log(x(7))  */
+         try {
+        console.log(x(5))
+        console.log(x(6))
+        console.log(x(16))
+        console.log(x("6"))
+        console.log(x(7))  
+        } catch (e) {
+           document.getElementById("error").innerHTML =  e.message;
+        }
+        finally{
+            console.log("ends!!")
+        } 
+        console.log("~~~~~~~~~~~~");
+        
+    </script>
+</body>
+</html>

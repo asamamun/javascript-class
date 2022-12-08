@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x = `{"x":1,"y":3,"z":3,"p":22,"t":6}`;
+        console.log(x);
+        let j = JSON.parse(x);
+        console.log(j)
+        console.log(j.toString())
+        console.log(j.toLocaleString())
+        let point = {
+            x: 1000,
+            y: 2000,
+            toString: function () { return `(${this.x}, ${this.y})`; },
+            toLocaleString: function () {
+                return `(${this.x.toLocaleString()}, ${this.y.toLocaleString()})`;
+            }
+        };
+        console.log(point.toString()) // => "(1000, 2000)"
+        console.log(point.toLocaleString()) // => "(1,000, 2,000)": note thousands separators
+    </script>
+</body>
+
+</html>

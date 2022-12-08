@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let letters = [..."bangladesh"];
+        console.log(letters.findIndex(x=>x=="g")) //3
+        console.log(letters.findIndex(x=>x=="i")) //-1
+        console.log(letters.find(x=>x=="i")) //-1//undefines
+        console.log(letters.find(x=>x=="h")) //-1//undefines
+        //every and some returns boolean
+        let a = [1,2,3,4,5];
+        console.log(a.every(x => x < 10)) // => true: all values are < 10.
+        console.log(a.some(x => x < 10)) // => true: all values are < 10.
+        //reduce
+        var n = 7;
+        var numbers = [];
+        for (let i = 1; i <= n; i++) {            
+            numbers.push(i);
+        }
+        console.log(numbers.reduce((x,y)=>x*y,1))
+        
+    </script>
+</body>
+</html>

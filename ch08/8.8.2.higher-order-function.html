@@ -1,0 +1,81 @@
+<a href="https://www.freecodecamp.org/news/higher-order-functions-in-javascript/">link</a>
+<script>
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+    function filterOdd(arr) {
+        const filteredArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 !== 0) {
+                filteredArr.push(arr[i]);
+            }
+        }
+        return filteredArr;
+    }
+    console.log(filterOdd(arr));
+
+// Output:
+// [ 1, 3, 5, 7, 9, 11 ]
+
+
+function filterEven(arr) {
+  const filteredArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 == 0) {
+      filteredArr.push(arr[i]);
+    }
+  }
+  return filteredArr;
+}
+console.log(filterEven(arr));
+
+// Output:
+// [ 2, 4, 6, 8, 10 ]
+
+//condition?"true":"false"; let x = 5 > 6 ? "5":"6";
+
+function filterFunction(arr, callback) {
+  const filteredArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    //callback can be isOdd or isEven or isGreaterThanFive.
+    callback(arr[i]) ? filteredArr.push(arr[i]) : null;
+  }
+  return filteredArr;
+}
+
+
+
+// Function containing logic for filtering out odd numbers
+
+function isOdd(x) {
+  return x % 2 != 0;
+}
+
+// Function containing logic for filtering out even numbers
+
+function isEven(x) {
+  return x % 2 === 0;
+}
+
+// For filtering out odd numbers
+
+console.log(filterFunction(arr, isOdd))
+// Output of console.log(filterFunction(arr, isOdd)):
+// [ 1, 3, 5, 7, 9, 11 ]
+
+// For filtering out even numbers
+
+console.log(filterFunction(arr, isEven))
+// Output of console.log(filterFunction(arr, isEven)):
+// [ 2, 4, 6, 8, 10 ]
+
+
+function isGreaterThanFive(x) {
+  return x > 5;
+}
+
+console.log(filterFunction(arr, isGreaterThanFive))
+console.log(filterFunction(arr, (x) => x > 5))
+console.log(filterFunction(arr, (x) => x%2))
+console.log(filterFunction(arr, (x) => x%2 == 0))
+
+</script>

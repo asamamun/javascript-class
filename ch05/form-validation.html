@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <section class="vh-100" style="background-color: #eee;">
+            <div class="container h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                  <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                      <div class="row justify-content-center">
+                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+          
+                          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+          
+                          <form class="mx-1 mx-md-4" id="registrationForm" action="register.php" method="post">
+          
+                            <div class="d-flex flex-row align-items-center mb-4">
+                              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                              <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="username">Your Name</label>
+                                <input type="text" id="username" class="form-control" />
+                                
+                              </div>
+                            </div>
+          
+                            <div class="d-flex flex-row align-items-center mb-4">
+                              <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                              <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="email">Your Email</label>
+                                <input type="email" id="email" class="form-control" />
+                                
+                              </div>
+                            </div>
+          
+                            <div class="d-flex flex-row align-items-center mb-4">
+                              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                              <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="pass1">Password</label>
+                                <input type="password" id="pass1" class="form-control" />
+                                
+                              </div>
+                            </div>
+          
+                            <div class="d-flex flex-row align-items-center mb-4">
+                              <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                              <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="pass2">Repeat your password</label>
+                                <input type="password" id="pass2" class="form-control" />
+                                
+                              </div>
+                            </div>
+          
+                            <div class="form-check d-flex justify-content-center mb-5">
+                              <input class="form-check-input me-2" type="checkbox" id="agree" value="yes" />
+                              <label class="form-check-label" for="agree">
+                                I agree all statements in <a href="#!">Terms of service</a>
+                              </label>
+                            </div>
+          
+                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                              <button type="button" onclick="register()" class="btn btn-primary btn-lg">Register</button>
+                            </div>
+          
+                          </form>
+          
+                        </div>
+                        <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                            <div>
+                            <div id="error" class="text-danger text-center">
+                                <h3 id="errorTitle" class="text-warning"></h3>
+                                <ul id="errorContainer" style="list-style-type: none">
+                                    
+                                </ul>
+                            </div>
+                          <img src="assets/images/draw1.webp"
+                            class="img-fluid" alt="Sample image">
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+    <script>
+
+function ValidateEmail(em) 
+{
+ return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(em);
+}
+        function register(){
+            document.getElementById("errorTitle").innerHTML = "";
+            document.getElementById("errorContainer").innerHTML = "";
+            $error = false;
+            $errorlist = [];
+            let username = document.getElementById("username").value;
+            let em = document.getElementById("email").value;
+            let p1 = document.getElementById("pass1").value;
+            let p2 = document.getElementById("pass2").value;
+            let agree = document.getElementById("agree");
+if((username.length <6)){
+    $error = true;
+    $errorlist.push("Username must be at least 6 characters");
+}
+if((em.length < 1)){
+    $error = true;
+    $errorlist.push("Email required!!");
+}
+if(!ValidateEmail(em)){
+    $error = true;
+    $errorlist.push("Email not valid!!");
+}
+if(p1.length <6 || p2.length <6){
+    $error = true;
+    $errorlist.push("Password must be at least 6 characters!!");
+}
+if(p1 !== p2 ){
+    $error = true;
+    $errorlist.push("Password and retype password must be same!!");
+}
+if(!agree.checked){
+    $error = true;
+    $errorlist.push("You have to agree with our tearms and condition!!");
+}
+if($error && $errorlist.length){
+  console.log($errorlist)
+    document.getElementById("errorTitle").innerHTML = "You have errors in your form!!!";
+    $errorlist.forEach(error => {
+        document.getElementById("errorContainer").innerHTML += "<li>"+error+"</li>";
+    });
+}
+else{
+    document.getElementById("registrationForm").submit();
+}
+
+// console.log($errorlist);
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<script>
+    const obj = {
+        a:5,
+        log: ['a', 'b', 'c',"D","hi","hello"],
+        //getter,accessor
+        get latest() {
+            return this.log[this.log.length - 1];
+        },
+        //setter,mutator
+        set latest(value) {
+            this.log.push(value)  
+        }
+    };
+
+    console.log(obj.latest);
+    obj.latest = "IDB";
+    obj.latest = "BISEW";
+    console.log(obj.latest);
+    obj.a = 6;
+
+</script>

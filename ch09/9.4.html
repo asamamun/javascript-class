@@ -1,0 +1,37 @@
+<script>
+    class A{
+        x(){ return "xxx";}
+        y(){return "yyy";}
+    }
+    let o = new A();
+    o.x();
+    A.prototype.z = function(){return "Z added to class A";};
+    console.log(o.z())
+    console.log(o.x())
+
+
+</script>
+<hr>
+<script>
+    // `${x}`
+        String.prototype.initCap = function(){
+            let n = this.valueOf();
+            let firstletter = `<span style="font-size:3em">${n[0]}</span>`;
+            let restletters = n.substring(1, n.length);
+            //let arr = [...n];
+            //console.log(n[0])
+            return `${firstletter}${restletters}`;
+            return `${firstletter}${restletters}`;
+        }
+        let b = "Bangladesh";
+        console.log(b.initCap())
+        Number.prototype.cube = function(f, context) {
+        let n = this.valueOf();
+        return n*n*n;
+        // for(let i = 0; i < n; i++) f.call(context, i);
+        };
+
+        let n = 4;
+        console.log(n.cube());
+        document.write(b.initCap());
+</script>
