@@ -1,0 +1,12 @@
+<button onclick="getrandomval()">random</button>
+<h1 id="r"></h1>
+<script>
+    let alphabate = [..."abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+    function getrandomval(){    
+    console.log(alphabate.length);
+    let random =Math.round(Math.random()*100)%alphabate.length
+    // console.log(random)
+    // console.log(alphabate[random])
+    document.getElementById("r").innerHTML = alphabate[random]
+    }
+</script>
