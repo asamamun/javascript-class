@@ -1,0 +1,116 @@
+
+Microsoft Windows [Version 10.0.19044.2251]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node testImport
+(node:12044) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export\testImport.js:1
+import { PI,Circle } from "./Mymodule";
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1084:15)
+    at Module._compile (node:internal/modules/cjs/loader:1119:27)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1209:10)
+    at Module.load (node:internal/modules/cjs/loader:1033:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:868:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:22:47
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node testImport
+node:internal/errors:478
+    ErrorCaptureStackTrace(err);
+    ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export\Mymodule' imported from D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export\testImport.js
+←[90m    at new NodeError (node:internal/errors:387:5)←[39m
+←[90m    at finalizeResolution (node:internal/modules/esm/resolve:330:11)←[39m
+←[90m    at moduleResolve (node:internal/modules/esm/resolve:907:10)←[39m
+←[90m    at defaultResolve (node:internal/modules/esm/resolve:1115:11)←[39m
+←[90m    at nextResolve (node:internal/modules/esm/loader:163:28)←[39m
+←[90m    at ESMLoader.resolve (node:internal/modules/esm/loader:837:30)←[39m
+←[90m    at ESMLoader.getModuleJob (node:internal/modules/esm/loader:424:18)←[39m
+←[90m    at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:40)←[39m
+←[90m    at link (node:internal/modules/esm/module_job:75:36)←[39m {
+  code: ←[32m'ERR_MODULE_NOT_FOUND'←[39m
+}
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node --experimental-modules testImport
+node:internal/errors:478
+    ErrorCaptureStackTrace(err);
+    ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export\Mymodule' imported from D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export\testImport.js
+←[90m    at new NodeError (node:internal/errors:387:5)←[39m
+←[90m    at finalizeResolution (node:internal/modules/esm/resolve:330:11)←[39m
+←[90m    at moduleResolve (node:internal/modules/esm/resolve:907:10)←[39m
+←[90m    at defaultResolve (node:internal/modules/esm/resolve:1115:11)←[39m
+←[90m    at nextResolve (node:internal/modules/esm/loader:163:28)←[39m
+←[90m    at ESMLoader.resolve (node:internal/modules/esm/loader:837:30)←[39m
+←[90m    at ESMLoader.getModuleJob (node:internal/modules/esm/loader:424:18)←[39m
+←[90m    at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:40)←[39m
+←[90m    at link (node:internal/modules/esm/module_job:75:36)←[39m {
+  code: ←[32m'ERR_MODULE_NOT_FOUND'←[39m
+}
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node --experimental-modules testImport
+3.141592653589793
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node --experimental-modules testImport
+3.141592653589793
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node  testImport
+3.141592653589793
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node  testImport
+node:internal/process/esm_loader:97
+    internalBinding('errors').triggerUncaughtException(
+                              ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export\Mymodule' imported from D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export\testImport.js
+Did you mean to import ../Mymodule.js?
+←[90m    at new NodeError (node:internal/errors:387:5)←[39m
+←[90m    at finalizeResolution (node:internal/modules/esm/resolve:330:11)←[39m
+←[90m    at moduleResolve (node:internal/modules/esm/resolve:907:10)←[39m
+←[90m    at defaultResolve (node:internal/modules/esm/resolve:1115:11)←[39m
+←[90m    at nextResolve (node:internal/modules/esm/loader:163:28)←[39m
+←[90m    at ESMLoader.resolve (node:internal/modules/esm/loader:837:30)←[39m
+←[90m    at ESMLoader.getModuleJob (node:internal/modules/esm/loader:424:18)←[39m
+←[90m    at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:76:40)←[39m
+←[90m    at link (node:internal/modules/esm/module_job:75:36)←[39m {
+  code: ←[32m'ERR_MODULE_NOT_FOUND'←[39m
+}
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node  testImport
+3.141592653589793
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node  testImport
+file:///D:/xampp8110/htdocs/Round53/javascript/classes/ch10/import-export/testImport.js:2
+import { PI,Circle } from "./Yourmodule.js";
+         ^^
+
+SyntaxError: Identifier 'PI' has already been declared
+←[90m    at ESMLoader.moduleStrategy (node:internal/modules/esm/translators:119:18)←[39m
+←[90m    at ESMLoader.moduleProvider (node:internal/modules/esm/loader:468:14)←[39m
+←[90m    at async link (node:internal/modules/esm/module_job:67:21)←[39m
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node  testImport
+file:///D:/xampp8110/htdocs/Round53/javascript/classes/ch10/import-export/testImport.js:2
+import { PI as YourPI,Circle } from "./Yourmodule.js";
+                      ^^^^^^
+
+SyntaxError: Identifier 'Circle' has already been declared
+←[90m    at ESMLoader.moduleStrategy (node:internal/modules/esm/translators:119:18)←[39m
+←[90m    at ESMLoader.moduleProvider (node:internal/modules/esm/loader:468:14)←[39m
+←[90m    at async link (node:internal/modules/esm/module_job:67:21)←[39m
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node  testImport
+3.141592653589793
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>node  testImport
+3.141592653589793
+5.55
+
+D:\xampp8110\htdocs\Round53\javascript\classes\ch10\import-export>
