@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //set
+        let names = new Set();
+        names.add("A")
+        names.add("A")
+        names.add("B")
+        names.add("C")
+        names.add("E")
+        names.add("E")
+        names.add("E")
+        names.delete("C")
+        console.log(names);
+        console.log(names.size);
+        console.log(names.has("Z"));
+        console.log(names.has("A"));
+    </script>
+    <hr>
+    <script>
+        //map
+        let GNSL = "GNSL";
+        let values = [
+            ['A', 55],
+            ["B", 66],
+            ["IDB", "Ismaic Development Bank"],
+            [GNSL, "Genuity"]
+        ];
+        console.log(values)
+        let mymap = new Map(values);
+        mymap.set("WC", "2022");
+        console.log(mymap);
+        console.log(mymap.get("A"));
+        console.log(mymap.get("GNSL"));
+        console.log(mymap.get("GNSL"));
+        console.log(mymap.size);
+
+    </script>
+    <hr>
+    <script>
+        let a = new Array(10);
+        a[11] = "5";
+        console.log(a);
+                let str = [5, "IDB", true, [5, 6, 7], { a: 5, b: 6 }, "brazil"];
+                let bytes = new Uint8Array(8);
+                console.log(bytes);
+                console.log(new Uint8Array());
+    </script>
+</body>
+
+</html>

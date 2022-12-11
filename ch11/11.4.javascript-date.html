@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{ text-align: center; font-size: 3em; font-family: monospace;}
+    </style>
+</head>
+<body>
+    1970 01-01- 00:00:00
+    <br>
+    <script>
+        document.write(Date.now());//returns unix timestamp in milliseconds
+    </script>
+    <h1 id="display">4569875656</h1>
+    <script>
+        function addzero(n){
+            if(n<10){ return "0"+n;}
+            else return n;
+        }
+        function addtwozero(n){
+            if(n<10){ return "00"+n}
+            else if(n<100){ return "0"+n;}
+            else return n;
+        }
+
+
+        let century = new Date(2100, // Year 2100
+0, // January
+1, // 1st
+2, 3, 4, 5); // 02:03:04.005, local time
+        
+        let script = function(){
+            let now = new Date();
+            document.getElementById("display").innerHTML = now.getFullYear()+
+        "-" + addzero(now.getMonth()+1) + 
+        "-" + addzero(now.getDate()) + 
+        " " + addzero(now.getHours()) + 
+        ":" + addzero(now.getMinutes()) + 
+        ":" + addzero(now.getSeconds()) + 
+        " " + addtwozero(now.getMilliseconds()); 
+        }
+        setInterval(script,1);
+        
+    </script>
+</body>
+</html>

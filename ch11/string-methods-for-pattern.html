@@ -1,0 +1,62 @@
+<script>
+    //1 search
+    console.log( "JavaScript".search(/script/i) ) //returns index of matched element or -1
+// 2 replace
+const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+
+console.log(p.replace('dog', 'monkey'));
+// expected output: "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"
+
+
+let regex = /Dog/i;
+console.log(p.replace(regex, 'ferret'));
+// expected output: "The quick brown fox jumps over the lazy ferret. If the dog reacted, was it really lazy?"
+
+//3 replace all
+// const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+console.log("replace all");
+console.log(p.replaceAll('dog', 'monkey'));
+// expected output: "The quick brown fox jumps over the lazy monkey. If the monkey reacted, was it really lazy?"
+
+
+// global flag required when calling replaceAll with regex
+regex = /Dog/ig;
+console.log(p.replaceAll(regex, 'COW'));
+// expected output: "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"
+
+//4 match
+console.log("--Match---");
+console.log("7 plus 8 equals 15".match(/\d+/g)) // => ["7", "8", "15"]
+let  paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+regex = /[A-Za-z]/g;
+let  found = paragraph.match(regex);
+
+console.log(found);
+// expected output: Array ["T", "I"]
+
+// 5 match all
+//Regular expression with the /g flag
+regex = /e(xam)(ple(\d?))/g;
+    //Reference string
+    let str = 'example1example2example3';
+      
+    //Using matchAll() method
+    console.log(...str.matchAll(regex));
+    //6 search
+paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
+
+// any character that is not a word character or whitespace
+regex = /[^\w\s]/g;
+
+console.log(paragraph.search(regex));
+// expected output: 43
+
+console.log(paragraph[paragraph.search(regex)]);
+// expected output: "."
+// 7 split
+str = '1,2,3,4,5,6,7';
+
+const words = str.split(',');
+console.log(words);
+    
+</script>

@@ -1,0 +1,13 @@
+<img src="" id="i"  alt="">
+<script>
+    let num = 1; 
+    let fx = function(){ 
+        document.getElementById("i").src = "images/1 ("+num+").jpg";
+        if(num == 17){ num = 0;}
+        num = num+1;
+    }
+    
+    
+
+    setInterval(fx,5000);
+</script>

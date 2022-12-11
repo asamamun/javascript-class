@@ -1,0 +1,73 @@
+<script>
+    // let pattern = /s$/;
+    // let pattern = /s$/i;
+    // let pattern = /(^javascript)&/i;
+    let pattern = /\bjavascript\b/i;
+    console.log(pattern.test("clasS"))
+    console.log(pattern.test("class1"))
+    console.log(pattern.test("javascript"))
+    console.log(pattern.test("testing javascript class"))
+    console.log(/ab*c/.test("testing javascript class"))
+    console.log(/ab*c/.test("abbbbc"))
+    console.log(/ab*c/.test("abc"))
+    const regex = new RegExp(/^a...s$/);
+    console.log(regex.test('alias')); // true
+    // let pattern = new RegExp();
+    // console.log(pattern);
+</script>
+<p>
+    MetaCharacters:<br>
+    <code>
+        [] - Square brackets
+        Square brackets specify a set of characters you wish to match.
+        . - Period
+        A period matches any single character (except newline '\n').
+        ^ - Caret
+        The caret symbol ^ is used to check if a string starts with a certain character.
+        $ - Dollar
+        The dollar symbol $ is used to check if a string ends with a certain character.
+        * - Star
+        The star symbol * matches zero or more occurrences of the pattern left to it.
+        + - Plus
+        The plus symbol + matches one or more occurrences of the pattern left to it.
+        ? - Question Mark
+        The question mark symbol ? matches zero or one occurrence of the pattern left to it.
+        {} - Braces
+        Consider this code: {n,m}. This means at least n, and at most m repetitions of the pattern left to it.
+        | - Alternation
+        Vertical bar | is used for alternation (or operator).
+        () - Group
+        Parentheses () is used to group sub-patterns. For example, (a|b|c)xz match any string that matches either a or b or c followed by xz
+        \ - Backslash
+        Backslash \ is used to escape various characters including all metacharacters. For example
+        \b - Matches if the specified characters are at the beginning or end of a word.
+        \B - Opposite of \b. Matches if the specified characters are not at the beginning or end of a word.
+        \d - Matches any decimal digit. Equivalent to [0-9]
+        \D - Matches any non-decimal digit. Equivalent to [^0-9]
+        \s - Matches where a string contains any whitespace character. Equivalent to [ \t\n\r\f\v].
+        \S - Matches where a string contains any non-whitespace character. Equivalent to [^ \t\n\r\f\v].
+        \w - Matches any alphanumeric character (digits and alphabets). Equivalent to [a-zA-Z0-9_]. By the way, underscore _ is also considered an alphanumeric character.
+        ___________________
+        Flags	Description
+        g	Performs a global match (find all matches)
+        m	Performs multiline match
+        i	Performs case-insensitive matching
+    </code>
+    <hr>
+    <script>
+        console.log("___________________");
+        const myRe = /d(b+)d/;
+        // const myArray = myRe.exec('cdbbdbsbz');
+        // const myArray = myRe.exec('cdbbdbsbz');
+        console.log(myRe.test('cdbbdbsbz'));
+        console.log(myRe.test('cdbbdbsbz'));
+        console.log(myRe.test('cdbbdbsbz'));
+        console.log(myRe.test('cdbdbsbz'));
+        console.log("_________W+__________");
+        const re = /\w+\s/g;
+        const str = 'fee fi fo fum fufu ';
+        const myArray = str.match(re);
+        console.log(myArray);
+        console.log(re.test('fee *fi fo fum'));
+    </script>
+</p>
