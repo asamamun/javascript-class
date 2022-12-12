@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        url <input type="text" onblur="op(this)" id="url" placeholder="url">
+    </form>
+    <button onclick="goback()">back</button>
+    <script>
+        function op(t){
+            window.open(t.value,"","width='600px',height=300px");
+        }
+        function goback(){
+            console.log(history.length)
+            // history.back();
+            // history.forward();
+            history.go(-3);
+        }
+        console.log(history)
+        console.log(screen)
+        console.log(location)
+    </script>
+</body>
+</html>

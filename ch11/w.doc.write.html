@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="openme()">open me</button>
+    <script>
+        function openme() {
+            let d = new Date();
+            let url = 'https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/'+(d.getMonth()+1)+'/'+d.getDate();
+            fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data.births)
+    var w = window.open("","","width=400px,height=200px");
+    w.document.write("<h3>i can show content here</h3>");
+});
+
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>search string: ?name=value&name=value&name=value</h1>
+    <script>
+        let url = "https://bikroy.com/en/ads/dhaka/laptops/lenovo?condition=new&money.price.minimum=10000&money.price.maximum=20000&tree.brand=lenovo";
+
+        // let url = "http://127.0.0.1:5500/11.9.URL.html";
+        //pathname: /en/ads/dhaka/laptops/lenovo
+        //port: 5500
+        //search: ?enum.condition=new&money.price.minimum=10000&money.price.maximum=20000&tree
+        let u = new URL(url);
+        console.log(u.search);
+        let params = new URLSearchParams(u.search);
+        console.log(params.get('condition'))
+        console.log(params.get('money.price.maximum'))
+        console.log(params.get('tree.brand'))
+        url = "https://www.daraz.com.bd/televisions/sony/?from=filter&ppath=7:123719065,8:4454,30886:2479";
+        u = new URL(url);
+        params = new URLSearchParams(u.search);
+        console.log(params.get('ppath'));
+        console.log(params.get('from'));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<script>
+    let url = "https://bikroy.com/en/ads/dhaka/laptops/lenovo?condition=new&money.price.minimum=10000&money.price.maximum=20000&tree.brand=lenovo";
+   document.write(url);
+   let newlink = "http://myfavlink.com/checkthisout/url="+btoa(url);
+   document.write("<br>");
+   document.write(newlink);
+   let paramvalue = "aHR0cHM6Ly9iaWtyb3kuY29tL2VuL2Fkcy9kaGFrYS9sYXB0b3BzL2xlbm92bz9jb25kaXRpb249bmV3Jm1vbmV5LnByaWNlLm1pbmltdW09MTAwMDAmbW9uZXkucHJpY2UubWF4aW11bT0yMDAwMCZ0cmVlLmJyYW5kPWxlbm92bw==";
+   document.write("<br>");
+   document.write(atob(paramvalue));
+   console.log(atob(paramvalue))
+   document.write("<br>");
+   document.write(btoa("Hello, world!"));//decode
+   document.write("<br>");
+   document.write(atob("SGVsbG8sIHdvcmxkIQ=="));//encode
+   console.log(encodeURI("http://google.com/q=hello'world'"));
+</script>

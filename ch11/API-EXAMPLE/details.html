@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+</head>
+<body>
+    <div class="container">
+        <div id="productInfoContainer">
+
+        </div>
+    </div>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script>
+        $(document).ready(function () {
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            const params = Object.fromEntries(urlSearchParams.entries());
+            //console.log(params.id);
+            $.getJSON("https://dummyjson.com/products/"+params.id,function(d){
+                let images = "";
+                d.images.forEach(i => {
+                    images += `<a href="${i}" data-lightbox="roadtrip"><img src="${i}" width="120px"/></a> `;
+                });
+$("#productInfoContainer").append(` ${images}
+<div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="${d.thumbnail}" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+`);
+            })
+        });
+    </script>
+</body>
+</html>

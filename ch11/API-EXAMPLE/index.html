@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #grandTotal{
+            color: blue;
+            font-weight: 900;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="cartContainer" class="container mt-5">
+        <button type="button" id="cartBtn" class="position-relative btn btn-outline-primary">
+            Cart
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span id="totalcount"></span>
+              
+            </span>
+          </button>
+        <table class="table" id="cartTableContainer">
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Quantity</td>
+                <td>Price</td>
+                <td>Total</td>
+                <td>Image</td>
+                <td>Action</td>
+            </tr>
+            <tbody id="cartbody">
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4"></th>
+                    <th colspan="2">GrandTotal</th>
+                    <td id="grandTotal">0</td>
+                </tr>
+                
+            </tfoot>
+        </table>
+    </div>
+    <div class="container">
+        <div class="row" id="productContainer">
+
+        </div>
+        <hr>
+        <!-- pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" data-skip="0" href="javascript:void(0)" aria-label="Previous">
+                  <span aria-hidden="true">First</span>
+                </a>
+              </li>
+              <li class="page-item"><a data-skip="0" class="page-link" href="javascript:void(0)">1</a></li>
+              <li class="page-item"><a data-skip="30" class="page-link" href="javascript:void(0)">2</a></li>
+              <li class="page-item"><a data-skip="60" class="page-link" href="javascript:void(0)">3</a></li>
+              <li class="page-item"><a data-skip="90" class="page-link" href="javascript:void(0)">4</a></li>
+              <li class="page-item">
+                <a class="page-link" data-skip="90" href="javascript:void(0)" aria-label="Next">
+                  <span aria-hidden="true">Last</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        <!-- pagination -->
+    </div>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#cartContainer").hide();
+            $("#cartBtn").click(function(){
+                $("#cartTableContainer").toggle(200);
+            })
+            //ajax method: get,post,ajax,getjson
+           function getAPIProducts(n) {
+            $.getJSON("https://dummyjson.com/products?skip="+n,function(d){
+                showproducts(d.products);
+            })
+           }
+            
+
+            function showproducts(p){
+                $("#productContainer").hide(500,function(){
+                    $("#productContainer").html("");
+                    p.forEach(e => {
+                   $("#productContainer").append(`<div class="card col-md-3" style="">
+  <img src="${e.thumbnail}" class="card-img-top" alt="${e.brand}">
+  <div class="card-body">
+    <h5 class="card-title">${e.title}</h5>
+    <p class="card-text">${e.description}</p>
+    <a href="details.html?id=${e.id}"><i class="fa-solid fa-circle-info"></i></a>
+    <a class='cartadd' data-id='${e.id}'><i class="fas fa-shopping-cart"></i></a>
+  </div>
+</div>`); 
+                });
+                }).show(500);
+                //console.log(p)
+
+            }
+
+            //
+            $("#productContainer").on("click",'.cartadd',function(){
+                let t = $(this);
+                //console.log(t.data('id'))
+                $.getJSON("https://dummyjson.com/products/"+t.data('id'), function(d){
+                    //console.log(d);
+                    $("#cartbody").append(`<tr>
+                    <td>${d.id}</td>
+                    <td>${d.title}</td>
+                    <td><input min="1" type='number' class='lblquantity' value='1'></td>
+                    <td class='lblprice'>${d.price}</td>
+                    <td class='lbltotal'>${d.price}</td>
+                    <td><img style="width:30px" src='${d.thumbnail}'/></td>
+                    <td><i class="fa-solid fa-trash cartTrash"></i></td>
+                </tr>`);
+                $("#cartContainer").show(200,function(){
+                    updateCartLabel();
+                });
+                })                
+                
+            });
+
+            $("#cartContainer").on("change",'.lblquantity',function(){
+                
+                //console.log($(this).val())
+                $t = $(this);
+                // console.log($t.closest('tr').find('.lblprice').html())
+                $newtotal = Number( $t.val()) * Number($t.closest('tr').find('.lblprice').text());
+                $t.closest('tr').find('.lbltotal').text($newtotal)
+                updateCartLabel();
+            })
+
+            function updateCartLabel(){
+                let totalitems=0;
+                let grandTotal=0;
+                $lc = $(".lblquantity");
+                $lp = $(".lblprice");
+                console.log($lp.length);
+                $("#cartbody tr").each(function () { 
+                    $t = $(this);
+                     totalitems += Number($t.find(".lblquantity").val());
+                     grandTotal += Number($t.find(".lblprice").text()) * Number($t.find(".lblquantity").val());
+                });
+                $("#totalcount").text(totalitems);
+                $("#grandTotal").text(grandTotal);
+
+            }
+
+            $("#cartContainer").on("click",'.cartTrash',function(){
+                $(this).parent().parent().remove();
+                updateCartLabel()
+            })
+// pagination start
+$(".pagination .page-link").click(function(){
+    getAPIProducts($(this).data("skip"))
+})
+
+
+// pagunation end
+
+//run when page loads
+getAPIProducts(0)
+        });
+    </script>
+</body>
+</html>
