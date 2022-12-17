@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        Name : <input type="text" id="uname"> <br>
+        Details: <br> <textarea name="" id="det" cols="30" rows="10"></textarea><br>
+        Team : 
+        <select name="" id="team">
+            <option value="ar">Argentina</option>
+            <option value="fr">France</option>
+        </select>
+        <br>
+        Gender: 
+        Male: <input type="radio" name="g" class="g" value="m" checked> | 
+        Female: <input type="radio" name="g" class="g" value="f"> | 
+        <br>
+        Your Choice: 
+        A <input type="checkbox" name="choice" id="" value="ch-a"> |
+        B <input type="checkbox" name="choice" id="" value="ch-b"> |
+        C <input type="checkbox" name="choice" id="" value="ch-c"> |
+        D <input type="checkbox" name="choice" id="" value="ch-d"> |
+        E <input type="checkbox" name="choice" id="" value="ch-e"> |
+        <br>
+        <input type="button" value="get form values" onclick="getval()">
+        <hr>
+        <div id="message"></div>
+    </form>
+    <script>
+        function getval(){
+            let un = document.getElementById("uname").value;
+            let details = document.getElementById("det").value;
+            let t = document.getElementById("team").value;
+            let g = document.querySelector("input[name='g']:checked").value;
+            //alert(un + " : " + details + " : " + t + " : " + g);
+            document.querySelector("#message").innerHTML = "Name:"+un;
+        }
+        //higher order function
+        function sum(x, y) {
+            function add(y) { return x + y; }
+            return add;
+        }
+
+        //function add(y){ return 15+y;}
+        //function add(y){ return 10+y;}
+        function callme() { result = sum(10, 10); return result; }
+        //alert(callme()(4));
+        //callme();
+        
+    </script>
+</body>
+
+</html>

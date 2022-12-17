@@ -1,0 +1,39 @@
+<html>  
+<body>  
+  
+<h2 style="color:green">Create a checkbox and get its value</h2>  
+<h4> Select the programming language, you know </h4>  
+<tr>  
+<td> Java: <input type="checkbox" id="check1" class="pl" value="Java"> </td>  
+<td> PHP: <input type="checkbox" id="check2" class="pl" value="PHP"> </td>   
+</tr> <tr>  
+<td> Angular: <input type="checkbox" id="check3" class="pl" value="Angular"> </td>  
+<td> CSS: <input type="checkbox" id="check4" class="pl" value="CSS"> </td>  
+</tr> <tr>  
+<td> Python: <input type="checkbox" id="check5" class="pl" value="Python"> </td>  
+<td> Android: <input type="checkbox" id="check6" class="pl" value="Android"> </td>  
+<button onclick="checkAll()">Check all</button> <br><br>  
+<button onclick="getCheckboxValue()">Submit</button> <br>  
+<h4 style="color:green" id="result"></h4>    
+  
+<script>  
+function checkAll() {  
+        var inputs = document.querySelectorAll('.pl');   
+        for (var i = 0; i < inputs.length; i++) {   
+            inputs[i].checked = true;   
+        }   
+}  
+function getCheckboxValue() {  
+  $arr = [];
+    document.getElementById("result").innerHTML = "";
+  var markedCheckbox = document.querySelectorAll('.pl:checked');  
+  for (var checkbox of markedCheckbox) {  
+    //document.getElementById("result").append(checkbox.value + ' ');  
+    $arr.push(checkbox.value);
+  }  
+  document.getElementById("result").append($arr);
+}  
+</script>  
+  
+</body>  
+</html>  
