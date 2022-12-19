@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function a(){
+            let i=1;
+            for (let index = 0; index < 5000; index++) {
+                for (let j = 0; j <10000; j++) {
+                  i += index + j;                     
+                }                
+            }
+            console.log("a called");
+     }
+        function b(){ console.log("b called")}
+        a();
+        b();//b will called when a is finished
+        console.log("success!");//console will be called when b is finished
+    </script>
+</body>
+</html>
