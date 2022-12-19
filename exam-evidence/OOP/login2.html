@@ -27,50 +27,21 @@
           </form>
     </div>
     <script>
-        class Login{
-            constructor(e,p){
-                this.email = e;
-                this.pass = p;
-            }
-            #testemail(em){
-                var re = /\S+@\S+\.\S+/;
-                //console.log(re.test(em))
-                return re.test(em)
-            }
-            validate(){
-                let m = {};
-                let error = false;
 
-                if(!this.#testemail(this.email)) {
-                    error=true; 
-                    m.emailerror   = "Invalid Email";
-                    //console.log(m)
-                }
-                if(this.pass.length < 4 || this.pass > 8){
-                    error=true;
-                    m.passworderror ="Passwords must be between 4 and 8 characters";
-                    //console.log(m)
-                }
-                return {e:error,message:m}
-            }
-        }
-
-        function validateForm(){
+        function validateForm(){            
+            error = false;
             document.getElementById("emailerror").innerHTML = "";
             document.getElementById("passworderror").innerHTML = "";
             let em = document.getElementById("email").value;
             let pass = document.getElementById("pass").value;
-            let l = new Login(em, pass);
-            let returnval = l.validate();
-            console.log(returnval)
-            if(returnval.e){
-                for (const key in returnval.message) {
-                   document.getElementById(key).innerHTML = returnval.message[key]; 
-                }
+            let re = /\S+@\S+\.\S+/;
+            if(re.test(em)){}
+            else{ alert("invalid email"); error=true;}
+            if(pass.length < 4 || pass.length >8){
+                alert("invalid pass");
+                error=true;
             }
-            else{
-                alert("Form validation success")
-            }
+            if(!error) { alert("OK");}          
         }
     </script>
 </body>

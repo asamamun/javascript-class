@@ -16,7 +16,7 @@
 <body>
 	<form name="a">
 		<label>User name</label>
-		<input type="text" id="uname" /><br>
+		<input type="text" name="uname" id="uname" /><br>
 		<label>Contact</label>
 		<input type="text" id="contact" /><br>
 		<label>Remark</label>
@@ -41,7 +41,7 @@
 	<script>
 		function check() {
 			//alert(document.getElementsByName("course")[1].checked);
-			var uname = document.getElementById("uname").value;
+			var uname = document.a.uname.value;
 			var contact = document.getElementById("contact").value;
 			var remark = document.getElementById("remark").value;
 			var sex = document.a.s.value;
