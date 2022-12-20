@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pimage{ width:150px}
+    </style>
+</head>
+<body>
+    <div id="productContainer">
+        
+    </div>
+    <div id="imageContainer"></div>
+    
+    <script>
+        // (function(){}())
+        (function(){
+            for (let index = 1; index <= 100; index++) {
+                document.getElementById("productContainer").innerHTML += "<a href='#' class='linka' onclick='load("+index+")'>"+index+"</a> ";                
+            }
+        }());
+        function showImages(d){
+            // console.log(d);
+            document.getElementById("imageContainer").innerHTML = "<h1>"+d.title+"</h1>";
+            d.images.forEach(i => {
+                document.getElementById("imageContainer").innerHTML +='<img class="pimage" src="'+i+'" alt="">';
+            });
+        }
+        function load(i){
+        //https://dummyjson.com/products/2
+        fetch("https://dummyjson.com/products/"+i)
+        .then(function(d){return d.json()})
+        .then(function(d){showImages(d)});
+        }
+
+    </script>
+</body>
+</html>

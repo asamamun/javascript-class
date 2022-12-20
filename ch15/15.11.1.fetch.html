@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d"></div>
+    <script>
+        fetch("checkbox.html")
+        .then(function(d){return d.text()})
+        .then(function(d){console.log(d)});
+
+
+
+        // fetch("http://localhost/Round53/bootstrap/homepage.html")
+        // .then(function(d){return d.text()})
+        // .then(function(d){
+        //     document.getElementById("d").innerHTML = d;
+        // });
+    </script>
+</body>
+</html>

@@ -40,29 +40,25 @@
             validate(){
                 let m = {};
                 let error = false;
-
                 if(!this.#testemail(this.email)) {
                     error=true; 
-                    m.emailerror   = "Invalid Email";
-                    //console.log(m)
+                    m.emailerror   = "Invalid Email";                    
                 }
                 if(this.pass.length < 4 || this.pass > 8){
                     error=true;
                     m.passworderror ="Passwords must be between 4 and 8 characters";
-                    //console.log(m)
+                    
                 }
                 return {e:error,message:m}
             }
         }
-
         function validateForm(){
             document.getElementById("emailerror").innerHTML = "";
             document.getElementById("passworderror").innerHTML = "";
             let em = document.getElementById("email").value;
             let pass = document.getElementById("pass").value;
             let l = new Login(em, pass);
-            let returnval = l.validate();
-            console.log(returnval)
+            let returnval = l.validate();            
             if(returnval.e){
                 for (const key in returnval.message) {
                    document.getElementById(key).innerHTML = returnval.message[key]; 

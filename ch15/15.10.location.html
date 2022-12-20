@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write(new Date().toString())
+    </script>
+    <hr>
+    <script>
+        // console.log(location);
+        for (const key in location) {
+            document.write(key + ': ' + location[key] + "<br>");
+        }
+
+        // setInterval(function(){location.reload()},50000)
+        //setInterval(function(){location.replace('http://mzamin.com')},5000)
+    </script>
+    <hr>
+    <script>
+        console.log(navigator);
+        for (const key in navigator) {
+            document.write(key + ': ' + navigator[key] + "<br>");
+        }
+    </script>
+</body>
+</html>

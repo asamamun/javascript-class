@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Analog Clock</title>
+<style>
+/* These CSS styles all apply to the SVG elements defined below */
+#clock { /* Styles for everything in the clock:*/
+stroke: black; /* black lines */
+stroke-linecap: round; /* with rounded ends */
+fill: #ffe; /* on an off-white background */
+}
+#clock .face { stroke-width: 3; } /* Clock face outline */
+#clock .ticks { stroke-width: 2; } /* Lines that mark each hour */
+#clock .hands { stroke-width: 3; } /* How to draw the clock hands */
+#clock .numbers { /* How to draw the numbers */
+font-family: sans-serif; font-size: 10; font-weight: bold;
+text-anchor: middle; stroke: none; fill: black;
+}
+</style>
+</head>
+<body>
+    <div style="text-align: center;">
+<svg id="clock" viewBox="0 0 100 100" width="250" height="250">
+<!-- The width and height attributes are the screen size of the graphic -->
+<!-- The viewBox attribute gives the internal coordinate system -->
+<circle class="face" cx="50" cy="50" r="45"/> <!-- the clock face -->
+<g class="ticks"> <!-- tick marks for each of the 12 hours -->
+<line x1='50' y1='5.000' x2='50.00' y2='10.00'/>
+<line x1='72.50' y1='11.03' x2='70.00' y2='15.36'/>
+<line x1='88.97' y1='27.50' x2='84.64' y2='30.00'/>
+<line x1='95.00' y1='50.00' x2='90.00' y2='50.00'/>
+<line x1='88.97' y1='72.50' x2='84.64' y2='70.00'/>
+<line x1='72.50' y1='88.97' x2='70.00' y2='84.64'/>
+<line x1='50.00' y1='95.00' x2='50.00' y2='90.00'/>
+<line x1='27.50' y1='88.97' x2='30.00' y2='84.64'/>
+<line x1='11.03' y1='72.50' x2='15.36' y2='70.00'/>
+<line x1='5.000' y1='50.00' x2='10.00' y2='50.00'/>
+<line x1='11.03' y1='27.50' x2='15.36' y2='30.00'/>
+<line x1='27.50' y1='11.03' x2='30.00' y2='15.36'/>
+</g>
+<g class="numbers"> <!-- Number the cardinal directions-->
+<text x="50" y="18">12</text>
+<text x="85" y="53">3</text>
+<text x="50" y="88">6</text>
+<text x="15" y="53">9</text>
+</g>
+<g class="hands"> <!-- Draw hands pointing straight up. -->
+<line class="hourhand" x1="50" y1="50" x2="50" y2="25"/>
+<line class="minutehand" x1="50" y1="50" x2="50" y2="20"/>
+<line class="sechand" style="stroke: green;"  x1="50" y1="50" x2="50" y2="10"/>
+</g>
+</svg>
+</div>
+<!-- <script src="clock.js"></script> -->
+<script>
+    (function updateClock() { // Update the SVG clock graphic to show current time
+let now = new Date(); // Current time
+let sec = now.getSeconds(); // Seconds
+let min = now.getMinutes() + sec/60; // Fractional minutes
+let hour = (now.getHours() % 12) + min/60; // Fractional hours
+let secangle = sec*6;
+let minangle = min * 6; // 6 degrees per minute
+let hourangle = hour * 30; // 30 degrees per hour
+// Get SVG elements for the hands of the clock
+let minhand = document.querySelector("#clock .minutehand");
+let hourhand = document.querySelector("#clock .hourhand");
+let sechand = document.querySelector("#clock .sechand");
+// Set an SVG attribute on them to move them around the clock face
+minhand.setAttribute("transform", `rotate(${minangle},50,50)`);
+hourhand.setAttribute("transform", `rotate(${hourangle},50,50)`);
+sechand.setAttribute("transform", `rotate(${secangle},50,50)`);
+
+// Run this function again in 10 seconds
+setTimeout(updateClock, 1000);
+}()); // Note immediate invocation of the function here.
+</script>
+</body>
+</html>
