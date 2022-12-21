@@ -33,15 +33,15 @@
                 this.email = e;
                 this.pass = p;
             }
-            #testemail(em){
+            #testemail(){
                 var re = /\S+@\S+\.\S+/;
                 //console.log(re.test(em))
-                return re.test(em)
+                return re.test(this.email)
             }
             validate(){
                 let m = {};
                 let error = false;
-                if(!this.#testemail(this.email)) {
+                if(!this.#testemail()) {
                     error=true; 
                     m.emailerror   = "Invalid Email";                    
                 }
